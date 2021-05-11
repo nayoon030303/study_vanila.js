@@ -1,7 +1,9 @@
 body {
     background-color: white;
 }
-
+.btn{
+    cursor: pointer;
+}
 h1{
     color: black;
     transition: color 0.5s ease-in-out;
