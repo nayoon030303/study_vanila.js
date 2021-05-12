@@ -55,7 +55,6 @@ function loadToDos(){
         //JSON : JavaScript Object Notation
         const parsedToDos = JSON.parse(loadedToDos);
         parsedToDos.forEach((toDo)=>{
-            console.log(toDo.text);
             paintToDo(toDo.text);
         });
     } 
