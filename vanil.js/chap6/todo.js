@@ -4,16 +4,28 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 
 const TODOS_LS = "toDos";
 
-const toDos = [];
+let toDos = [];
 
 function saveToDos(){
     localStorage.setItem(TODOS_LS,JSON.stringify(toDos));//JSON.stringify js object를 string으로 바꿔준다.
+}
+
+function deleteToDo(event){
+    const btn = event.target;
+    const li = btn.parentNode   ;
+    toDoList.removeChild(li);
+    const cleanToDos = toDos.filter((toDo)=>{
+        return toDo.id !== parseInt(li.id);
+    });
+    toDos = cleanToDos;
+    saveToDos();
 }
 
 function paintToDo(text){
     const li = document.createElement("li");
     const delBtn = document.createElement("button");
     delBtn.innerText = "❌";
+    delBtn.addEventListener("click",deleteToDo);
     const span = document.createElement("span");
     const newID = toDos.length+1;
     span.innerText = text;
