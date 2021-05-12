@@ -1,2 +1,2 @@
-study_vanila.js
-make momonton 
+# study_vanila.js
+# make momonton 
